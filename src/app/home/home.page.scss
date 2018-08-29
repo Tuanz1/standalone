@@ -1,1 +1,9 @@
+.fill-remain-space {
+    // 使用flexbox挤满剩余空间
+    flex: 1 1 auto;
+}
 
+ion-segment {
+    width: 70%;
+    margin-left: 15%;
+}
