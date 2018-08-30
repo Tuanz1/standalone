@@ -1,9 +1,24 @@
-.fill-remain-space {
-    // 使用flexbox挤满剩余空间
-    flex: 1 1 auto;
-}
-
 ion-segment {
     width: 70%;
     margin-left: 15%;
+}
+
+ion-item {
+    margin-top: 2px;
+}
+
+.habit-content {
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.habit-checks {
+    display: inherit;
+
+    .habit-check {
+        margin-left: 6px;
+        margin-right: 6px;
+    }
 }
