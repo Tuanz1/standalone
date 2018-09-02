@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
 import {ActionSheetController} from '@ionic/angular';
+import {PopoverController} from '@ionic/angular';
+import {HabitCreateComponent} from '../component/habit-create/habit-create.component';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,7 +10,9 @@ import {ActionSheetController} from '@ionic/angular';
 })
 export class HomePage {
   check: boolean = false;
-  constructor(public actionSheetController: ActionSheetController) {}
+  constructor(
+      public actionSheetController: ActionSheetController,
+      public popoverController: PopoverController) {}
   tap() {
     console.log('tap func');
   }
@@ -56,5 +61,11 @@ export class HomePage {
       ]
     });
     await actionSheet.present();
+  }
+
+  async openPopover() {
+    const popover = await this.popoverController.create(
+        {component: HabitCreateComponent, translucent: true});
+    return await popover.present();
   }
 }

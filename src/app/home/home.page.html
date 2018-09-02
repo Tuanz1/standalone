@@ -19,7 +19,7 @@
     </ion-segment> -->
 
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button (click)="openPopover()">
         <ion-icon name="add"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -51,23 +51,5 @@
 
   </ion-list>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button onclick="clickMainFAB('fab2')" color="dark" class="e2eFabBottomRight">
-      <ion-icon name="arrow-dropleft"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="start">
-      <ion-fab-button onclick="openSocial('facebook', 'fab2')">
-        <ion-icon name="logo-facebook"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button onclick="openSocial('twitter', 'fab2')">
-        <ion-icon name="logo-twitter"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button onclick="openSocial('vimeo', 'fab2')">
-        <ion-icon name="logo-vimeo"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button onclick="openSocial('googleplus', 'fab2')">
-        <ion-icon name="logo-googleplus"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
+
 </ion-content>

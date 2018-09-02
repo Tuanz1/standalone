@@ -1,0 +1,43 @@
+<ion-list inset="true">
+  <ion-list-header>
+    <ion-label>新习惯</ion-label>
+  </ion-list-header>
+  <ion-item>
+    <ion-input color="success" placeholder="习惯标题"></ion-input>
+    <ion-icon slot="end" name="aperture"></ion-icon>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" placeholder="提醒问题（今天你XX了么）"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>重复</ion-label>
+    <ion-select [(ngModel)]="repeat" *ngIf="repeat!='custom'" placeholder="repeat">
+      <ion-select-option value="day">每天</ion-select-option>
+      <ion-select-option value="week">每周</ion-select-option>
+      <ion-select-option value="once">每周两次</ion-select-option>
+      <ion-select-option value="custom">自定义</ion-select-option>
+    </ion-select>
+    <div class="custom-input" *ngIf="repeat=='custom'">
+      <ion-label>每</ion-label>
+      <ion-input type="number"></ion-input>
+      <ion-label>天</ion-label>
+      <ion-input type="number"></ion-input>
+      <ion-label>次</ion-label>
+    </div>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>提醒</ion-label>
+    <ion-datetime display-format="HH:mm"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel()" color="light">
+        取消
+      </ion-button>
+      <ion-button color="danger">
+        保存
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+</ion-list>
