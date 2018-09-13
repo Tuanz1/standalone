@@ -29,21 +29,21 @@
 
 <ion-content>
   <ion-list>
-    <ion-card>
+    <ion-card *ngFor="let habit of habits">
       <ion-item>
-        <div class="habit-content">考虑用Badge或者自定义一个component,测试一下长度能不能更多</div>
+        <div class="habit-content">{{habit.title}}</div>
         <div class="habit-checks" slot="end">
+          <div class="habit-check" id="check1" (press)="change(habit, habit.records)">
+            <ion-icon *ngIf="habit.records.yes == 'true'" color="success" name="checkmark"></ion-icon>
+            <ion-icon *ngIf="habit.records.yes != 'true'" color="medium" name="close"></ion-icon>
+          </div>
           <div class="habit-check" id="check1" (press)="change()">
-            <ion-icon *ngIf="check" color="success" name="checkmark"></ion-icon>
-            <ion-icon *ngIf="!check" color="medium" name="close"></ion-icon>
+            <ion-icon *ngIf="habit.records.tod == 'true'" color="success" name="checkmark"></ion-icon>
+            <ion-icon *ngIf="habit.records.tod != 'true'" color="medium" name="close"></ion-icon>
           </div>
-          <div class="habit-check" id="check2" (press)="change()">
-            <ion-icon *ngIf="check" color="success" name="checkmark"></ion-icon>
-            <ion-icon *ngIf="!check" color="medium" name="close"></ion-icon>
-          </div>
-          <div class="habit-check" id="check3" (press)="change()">
-            <ion-icon *ngIf="check" color="success" name="checkmark"></ion-icon>
-            <ion-icon *ngIf="!check" color="medium" name="close"></ion-icon>
+          <div class="habit-check" id="check1" (press)="change()">
+            <ion-icon *ngIf="habit.records.tom == 'true'" color="success" name="checkmark"></ion-icon>
+            <ion-icon *ngIf="habit.records.tom != 'true'" color="medium" name="close"></ion-icon>
           </div>
         </div>
       </ion-item>

@@ -7,6 +7,12 @@ ion-item {
     margin-top: 2px;
 }
 
+ion-card {
+    margin: 10px 10px 2px 4px;
+    border-radius: 2px;
+    width: calc(100% - 4px);
+}
+
 .habit-content {
     width: 50%;
     overflow: hidden;

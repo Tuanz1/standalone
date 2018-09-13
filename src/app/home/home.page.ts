@@ -10,6 +10,10 @@ import {HabitCreateComponent} from '../component/habit-create/habit-create.compo
 })
 export class HomePage {
   check: boolean = false;
+  habits = [
+    {title: 'test', records: {yes: 'true', tod: 'true', tom: 'true'}},
+    {title: 'test', records: {yes: 'true', tod: 'false', tom: 'true'}}
+  ]
   constructor(
       public actionSheetController: ActionSheetController,
       public popoverController: PopoverController) {}
@@ -19,8 +23,13 @@ export class HomePage {
   press() {
     console.log('press fuc');
   }
-  change() {
-    this.check = !this.check;
+  change(habit, v) {
+    console.log(habit);
+    // this.check = !this.check;
+    if (v.yes == 'true')
+      v.yes = 'false';
+    else
+      v.yes = 'true';
   }
 
   async presentActionSheet() {
